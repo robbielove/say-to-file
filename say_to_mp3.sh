@@ -6,9 +6,7 @@ convert_to_mp3() {
   uuid=$(uuidgen)
   output="${input%.*}_${uuid}.mp3"
 
-  say -v "Lee (Enhanced)" -r 200 -o output.aiff -f "$input" 
-  && ffmpeg -i output.aiff -acodec libmp3lame -q:a 0 "$output" 
-  && rm output.aiff
+  say -v "Lee (Enhanced)" -r 200 -o output.aiff -f "$input" && ffmpeg -i output.aiff -acodec libmp3lame -q:a 0 "$output" && rm output.aiff
   echo "MP3 file created: $output"
 }
 
